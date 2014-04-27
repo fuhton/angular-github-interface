@@ -1,0 +1,7 @@
+## MAC OS X
+.DS_Store
+
+## Normal stuff and things
+bower_components
+vendor
+node_modules
