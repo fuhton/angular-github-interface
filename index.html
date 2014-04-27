@@ -16,9 +16,16 @@
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
         <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
+        <!-- Require -->
+        <script src="http://requirejs.org/docs/release/2.1.11/minified/require.js"></script>
+
         <!-- jQuery Libraries -->
 
         <!-- Angular Libraries -->
+
+
+        <script src="js/main.js"></script>
+
 
     </head>
     <body>
@@ -43,7 +50,9 @@
        </nav>
 
        <div class="container">
-           <div id="github-app" ng-view class="ng-cloak"></div>
+           <div id="github-interface" ng-view class="ng-cloak" ng-controller="WelcomeController">
+               {{greeting}}
+           </div>
        </div>
     </body>
 </html>
