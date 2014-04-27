@@ -34,15 +34,20 @@ require(
                     'angular_route',
                 ]
             },
+            'services/SearchService': {
+                deps: ['app']
+            },
             'controllers/primary': {
-                deps: [
-                    'app'
-                ]
+                deps: ['app', 'services/SearchService']
+            },
+            'controllers/user': {
+                deps: ['app', 'services/SearchService']
             },
             'routes': {
                 deps: [
                     'app',
-                    'controllers/primary'
+                    'controllers/primary',
+                    'controllers/user'
                 ]
             },
 
