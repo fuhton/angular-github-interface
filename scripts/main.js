@@ -3,18 +3,18 @@ require(
         paths: {
             jquery: [
                 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min',
-                'http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min',
             ],
             bootstrap: [
                 'http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min',
-                'http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min',
             ],
             angular: [
                 'http://code.angularjs.org/1.2.4/angular.min',
-                'http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.4/angular.min',
             ],
             angular_route: [
                 'http://code.angularjs.org/1.2.4/angular-route.min',
+            ],
+            angular_resource: [
+                'http://code.angularjs.org/1.2.4/angular-resource.min',
             ]
         },
         shim: {
@@ -28,11 +28,20 @@ require(
             {
                 deps: ['angular']
             },
+            'angular_resource':
+            {
+                deps: ['angular']
+            },
             'app': {
                 deps: [
                     'angular',
                     'angular_route',
+                    'angular_resource',
                 ]
+            },
+
+            'resources/GithubAPI': {
+                deps: ['app']
             },
             'services/SearchService': {
                 deps: ['app']
@@ -41,7 +50,7 @@ require(
                 deps: ['app', 'services/SearchService']
             },
             'controllers/user': {
-                deps: ['app', 'services/SearchService']
+                deps: ['app', 'resources/GithubAPI', 'services/SearchService']
             },
             'routes': {
                 deps: [

@@ -1,3 +1,3 @@
 angular.module('GithubInterface',
-               ['ngRoute']
+               [ 'ngResource', 'ngRoute']
               );

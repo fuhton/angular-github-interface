@@ -1,15 +1,17 @@
 angular.module('GithubInterface').controller(
 
-    // controller name
+    // Name
     'ctrl.GithubUser',
 
-    // dependency injection
-    ['$scope' , '$location', 'SearchService',
-     function( $scope, $location, SearchService )  {
+    // Dependencies
+    ['$scope', '$location', 'GithubAPI', 'SearchService',
+     function( $scope, $location, GithubAPI, SearchService )  {
 
          SearchService.search();
 
-         $scope.greeting = "user";
+         GithubAPI.get({user: "fuhton"}, function (result) {
+             $scope.greeting = result;
+         });
      }
     ]
 

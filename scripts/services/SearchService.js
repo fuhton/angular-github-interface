@@ -1,16 +1,17 @@
 angular.module('GithubInterface').service(
 
-    // service name
+    //Name
     'SearchService',
 
-    // dependency injection
-    [ '$rootScope',
+    // Dependencies
+    [ '$rootScope', '$location',
 
-      // service definition
-      function(rootScope) {
+      //Definition
+      function(rootScope, $location) {
           var _search = function() {
               rootScope.gsearch = function () {
-                  console.log( rootScope.searchInput );
+                  $location.path(rootScope.searchInput);
+                  rootScope.searchInput = "";
               }
           };
 
@@ -19,4 +20,6 @@ angular.module('GithubInterface').service(
                   _search();
               }
           }
-      }]);
+      }
+    ]
+);

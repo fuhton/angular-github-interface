@@ -1,15 +1,15 @@
 angular.module('GithubInterface').controller(
 
-    // controller name
+    //Name
     'ctrl.Primary',
 
-    // dependency injection
+    //Dependencies
     ['$scope', '$location', 'SearchService',
      function( $scope, $location, SearchService )  {
 
          SearchService.search();
 
-         $scope.greeting = "hello";
+         $scope.greeting = "hey buddy";
      }
     ]
 
