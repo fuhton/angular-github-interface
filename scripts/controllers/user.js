@@ -4,15 +4,26 @@ angular.module('GithubInterface').controller(
     'ctrl.GithubUser',
 
     // Dependencies
-    ['$scope', '$location', 'GithubAPI', 'SearchService',
-     function( $scope, $location, GithubAPI, SearchService )  {
+    ['$scope', '$routeParams', '$location', 'GithubAPI', 'SearchService',
+     function( $scope, $routeParams, $location, GithubAPI, SearchService )  {
+
+         var user = $routeParams.user;
 
          SearchService.search();
 
-         GithubAPI.get({user: "fuhton"}, function (result) {
-             $scope.greeting = result;
-         });
+         GithubAPI.get(
+             {user: user, repo: ''},
+             function (result) {
+                 $scope.user = result;
+             }
+         );
+
+         GithubAPI.get(
+             {user: user},
+             function (result) {
+                 $scope.repos = result;
+             }
+         );
      }
     ]
-
 );

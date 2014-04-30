@@ -1,3 +1,38 @@
 <div class="row">
-    {{ greeting }}
+
+    <div class="col-xs-6">
+        <a href="{{user.data.html_url}}" target="_blank" type="button" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-star"></span> Link to Github Profile
+        </a>
+    </div>
+
+    <div class="col-xs-6">
+        <ul class="nav nav-pills nav-stacked">
+            <li class="active">
+                <a href="#">
+                    <span class="badge pull-right">{{user.data.public_repos}}</span>
+                    # Public of Repos
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="badge pull-right">{{user.data.public_repos}}</span>
+                    # Starred of Repos
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="badge pull-right">{{user.data.followers}}</span>
+                    # Followers
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="badge pull-right">{{user.data.following}}</span>
+                    # Following
+                </a>
+            </li>
+        </ul>
+    </div>
+
 </div>
