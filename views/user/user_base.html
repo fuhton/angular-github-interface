@@ -1,54 +1,56 @@
-<div class="col-xs-12 col-sm-6">
-    <div class="row">
-        <div class="col-xs-12 col-md-3">
-            <a class="thumbnail" href="#">
-                <img class="media-object img-rounded" src="{{user.data.avatar_url}}">
-            </a>
-            <p></p>
-        </div>
-        <div class="col-xs-12 col-md-3">
-            <p>{{user.data.login}}</p>
-            <a href="{{user.data.html_url}}" target="_blank" type="button" class="btn btn-default btn-lg">
-                <span class="glyphicon glyphicon-star"></span> Link to Github Profile
-            </a>
-            <p></p>
+<div class="row">
+    <div class="col-xs-12 col-sm-6">
+        <div class="row">
+            <div class="col-xs-12 col-md-3">
+                <a class="thumbnail" href="#">
+                    <img class="media-object img-rounded" src="{{user.data.avatar_url}}">
+                </a>
+                <p></p>
+            </div>
+            <div class="col-xs-12 col-md-9">
+                <h2>{{user.data.login}} <small>Joined: {{user.data.created_at | date : 'MM/dd/yyyy'}}</small></h2>
+                <a href="{{user.data.html_url}}" target="_blank" type="button" class="btn btn-default btn-lg">
+                    <span class="glyphicon glyphicon-star"></span> Link to Github Profile
+                </a>
+                <p></p>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="col-xs-12 col-sm-6">
-    <div class="row">
-        <ul class="nav nav-pills nav-stacked">
-            <li class="active">
-                <a target="_blank" href="{{user.data.html_url}}?tab=repositories">
-                    <span class="badge pull-right">{{user.data.public_repos}}</span>
-                    # Public of Repos
-                </a>
-            </li>
-            <li>
-                <a target="_blank" href="http://gist.github.com/{{user.data.login}}">
-                    <span class="badge pull-right">{{user.data.public_gists}}</span>
-                    # Public Gists
-                </a>
-            </li>
-            <li>
-                <a target="_blank" href="http://github.com/stars/{{user.data.login}}">
-                    <span class="badge pull-right">{{user.data.public_repos}}</span>
-                    # Starred of Repos
-                </a>
-            </li>
-            <li>
-                <a target="_blank" href="{{user.data.html_url}}/followers">
-                    <span class="badge pull-right">{{user.data.followers}}</span>
-                    # Followers
-                </a>
-            </li>
-            <li>
-                <a target="_blank" href="{{user.data.html_url}}/following">
-                    <span class="badge pull-right">{{user.data.following}}</span>
-                    # Following
-                </a>
-            </li>
-        </ul>
+    <div class="col-xs-12 col-sm-6">
+        <div class="row">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active">
+                    <a target="_blank" href="{{user.data.html_url}}?tab=repositories">
+                        <span class="badge pull-right">{{user.data.public_repos}}</span>
+                        # Public of Repos
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://gist.github.com/{{user.data.login}}">
+                        <span class="badge pull-right">{{user.data.public_gists}}</span>
+                        # Public Gists
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://github.com/stars/{{user.data.login}}">
+                        <span class="badge pull-right">{{user.data.public_repos}}</span>
+                        # Starred of Repos
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="{{user.data.html_url}}/followers">
+                        <span class="badge pull-right">{{user.data.followers}}</span>
+                        # Followers
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="{{user.data.html_url}}/following">
+                        <span class="badge pull-right">{{user.data.following}}</span>
+                        # Following
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
