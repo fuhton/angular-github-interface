@@ -43,9 +43,6 @@ require(
             'resources/GithubAPI': {
                 deps: ['app']
             },
-            'resources/GithubStreak': {
-                deps: ['app']
-            },
             'services/SearchService': {
                 deps: ['app']
             },
@@ -53,7 +50,7 @@ require(
                 deps: ['app', 'services/SearchService']
             },
             'controllers/user': {
-                deps: ['app', 'resources/GithubAPI', 'resources/GithubStreak', 'services/SearchService']
+                deps: ['app', 'resources/GithubAPI', 'services/SearchService']
             },
             'routes': {
                 deps: [

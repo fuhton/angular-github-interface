@@ -4,8 +4,8 @@ angular.module('GithubInterface').controller(
     'ctrl.GithubUser',
 
     // Dependencies
-    ['$scope', '$routeParams', '$location', 'GithubAPI', 'GithubStreak', 'SearchService',
-     function( $scope, $routeParams, $location, GithubAPI, GithubStreak, SearchService )  {
+    ['$scope', '$http', '$routeParams', '$location', 'GithubAPI', 'SearchService',
+     function( $scope, $http, $routeParams, $location, GithubAPI, SearchService )  {
 
          var user = $routeParams.user;
 
@@ -23,14 +23,9 @@ angular.module('GithubInterface').controller(
              function (result) {
                  $scope.repos = result;
              }
+
          );
 
-         GithubStreak.get(
-             {user: user},
-             function (result) {
-                 $scope.streak = result;
-             }
-         );
      }
     ]
 );
